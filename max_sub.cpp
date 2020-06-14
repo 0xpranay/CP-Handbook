@@ -3,30 +3,29 @@ using namespace std;
 int main(void)
 {
     
-    int arr[8];
-    int sum,best;
-    for (int i = 0; i < 8; i++)
+    int arr[8]={-2,-3,4,-1,-2,1,5,-3};
+    int max_here,total_max=INT16_MIN;
+    /*for (int i = 0; i < 8; i++)
     {
-        /* code */
+        
         cin>>arr[i];
-    }
+    }*/
     clock_t tstart=clock();
     for (int i = 0; i < 8; i++)
-    {
-        for (int j = i; j < 8; j++)
+    {  
+        max_here+=arr[i];
+        if (max_here>total_max)
         {
-            sum=0;
-            for (int k = i; k <=j; k++)
-            {
-                /* code */
-                sum+=arr[k];
-            }
-            best=max(sum,best);
-            
+            /* code */
+            total_max=max_here;
         }
-        
+        if (max_here<0)
+        {
+            /* code */
+            max_here=0;
+        }
     }
-    cout<<best;
+    cout<<total_max<<endl;
     cout<<"time taken is "<<fixed<<(double)(clock()-tstart)/CLOCKS_PER_SEC<<setprecision(5);
     
     
