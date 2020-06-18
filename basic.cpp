@@ -2,31 +2,23 @@
 using namespace std;
 int main(void)
 {
-    vector<int> v;
-    int value;
-    cout<<"Enter elements\n";
-    while (cin>>value && value!=-72)
+    vector<tuple<int,int,int>> v;
+    int n,a,b,c;
+    tuple<int,int,int> t;
+    cout<<"Enter number of tuples\n";
+    cin>>n;
+    for (int i = 0; i < n; i++)
     {
-        v.push_back(value);
         /* code */
+        cout<<"Enter "<<i<<"th Tuple\n";
+        cin>>a>>b>>c;
+        t=make_tuple(a,b,c);
+        v.push_back(t);
     }
-    for(int i=0;i<v.size();i++)
+    for(auto i:v)
     {
-        cout<<v[i]<<endl;
+        cout<<get<0>(i)<<" "<<get<1>(i)<<" "<<get<2>(i)<<endl;
     }
-    
-    
-    sort(v.begin(),v.end());
-    for(auto i=v.begin();i!=v.end();++i)
-    {
-        cout<<*i<<endl;
-    }
-
-
-    
-    
-    
-    
     
     
     
